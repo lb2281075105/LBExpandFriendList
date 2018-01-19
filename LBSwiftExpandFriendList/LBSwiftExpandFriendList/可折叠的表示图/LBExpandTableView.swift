@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 let LBCellHeight = 44
 
 class LBExpandTableView: UITableView {
@@ -62,59 +62,57 @@ extension LBExpandController:UITableViewDelegate,UITableViewDataSource{
         let line = UIImageView()
         line.image = UIImage.init(named: "line")
         button.addSubview(line)
-        
-        
-        
+        line.snp.makeConstraints { (make) in
+            make.left.equalTo(button);
+            make.top.equalTo(button.snp.top).offset(LBCellHeight - 1);
+            make.centerY.equalTo(button);
+            make.width.equalTo(UIScreen.main.bounds.size.width);
+            make.height.equalTo(1);
+        }
+        /// 添加左边图标
+        let leftImgView = UIImageView()
+        leftImgView.image = UIImage.init(named: "circle")
+        button.addSubview(leftImgView)
+        leftImgView.snp.makeConstraints { (make) in
+            make.width.height.equalTo(24);
+            make.left.equalTo(button).offset(10);
+            make.centerY.equalTo(button);
+        }
+        /// 添加右边的箭头
+        let arrowImgView = UIImageView()
+        button.addSubview(arrowImgView)
+        arrowImgView.snp.makeConstraints { (make) in
+            make.width.height.equalTo(10);
+            make.centerY.equalTo(button);
+            make.left.equalTo(button.snp.left).offset(UIScreen.main.bounds.size.width - 30);
+        }
 
-//        [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(button);
-//        make.top.equalTo(button.mas_top).offset(LBCellHeight - 1);
-//        make.centerY.equalTo(button);
-//        make.width.equalTo(@([UIScreen mainScreen].bounds.size.width));
-//        make.height.equalTo(@1);
-//        }];
-//        /// 添加左边图标
-//        UIImageView *leftImgView = [[UIImageView alloc]init];
-//        [leftImgView setImage:[UIImage imageNamed:@"circle"]];
-//        [button addSubview:leftImgView];
-//        [leftImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.height.equalTo(@24);
-//        make.left.equalTo(button).offset(10);
-//        make.centerY.equalTo(button);
-//        }];
-//        /// 添加右边的箭头
-//        UIImageView *arrowImgView = [[UIImageView alloc]init];
-//        [button addSubview:arrowImgView];
-//        [arrowImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.height.equalTo(@10);
-//        make.centerY.equalTo(button);
-//        make.left.equalTo(button.mas_left).offset([UIScreen mainScreen].bounds.size.width - 30);
-//        }];
-////        if ([_sectionStateArray[section] isEqualToString:@"0"]) {
-////            arrowImgView.image = [UIImage imageNamed:@"bottomArrow"];
-////        }else if ([_sectionStateArray[section] isEqualToString:@"1"]) {
-////            arrowImgView.image = [UIImage imageNamed:@"topArrow"];
-////        }
-//        /// 每组个数
-//        UILabel *countLabel = [[UILabel alloc]init];
-//        [countLabel setBackgroundColor:[UIColor clearColor]];
-//        countLabel.font = [UIFont systemFontOfSize:14];
-//        countLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[_dataSourceArray[section] count]];
-//        [button addSubview:countLabel];
-//        [countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(button);
-//        make.right.equalTo(arrowImgView.mas_left).offset(- 20);
-//        }];
-//        /// 组标题
-//        UILabel *sectionTitleLabel = [[UILabel alloc]init];
-//        [sectionTitleLabel setBackgroundColor:[UIColor clearColor]];
-//        sectionTitleLabel.font = [UIFont systemFontOfSize:14];
-//        sectionTitleLabel.text = _sectionTitleArray[section];
-//        [button addSubview:sectionTitleLabel];
-//        [sectionTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(button);
-//        make.left.equalTo(leftImgView.mas_right).offset(15);
-//        }];
+//        if ([_sectionStateArray[section] isEqualToString:@"0"]) {
+//            arrowImgView.image = [UIImage imageNamed:@"bottomArrow"];
+//        }else if ([_sectionStateArray[section] isEqualToString:@"1"]) {
+//            arrowImgView.image = [UIImage imageNamed:@"topArrow"];
+//        }
+        /// 每组个数
+        let countLabel = UILabel()
+        countLabel.backgroundColor = UIColor.clear
+        countLabel.font = UIFont.systemFont(ofSize: 14)
+        countLabel.text = "\((dataSourceArray[section] as AnyObject).count)"
+        button.addSubview(countLabel)
+        countLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(button);
+            make.right.equalTo(arrowImgView.snp.left).offset(-20);
+        }
+        /// 组标题
+        let sectionTitleLabel = UILabel()
+        sectionTitleLabel.backgroundColor = UIColor.clear
+        sectionTitleLabel.font = UIFont.systemFont(ofSize: 14)
+        sectionTitleLabel.text = sectionTitleArray[section];
+        button.addSubview(sectionTitleLabel)
+        sectionTitleLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(button);
+            make.left.equalTo(leftImgView.snp.right).offset(15);
+        }
+
         return button;
     }
 }
