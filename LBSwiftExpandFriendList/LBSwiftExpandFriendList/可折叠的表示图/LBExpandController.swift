@@ -18,7 +18,11 @@ class LBExpandController: UIViewController {
     }()
     /// 每组展开状态
     lazy var sectionStateArray = NSMutableArray()
-    
+    /// 表示图
+    lazy var lbexpandTableView:LBExpandTableView = {
+        let expandTableView = LBExpandTableView.init(frame: UIScreen.main.bounds, style: .grouped)
+        return expandTableView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "可以折叠的表示图"
@@ -47,5 +51,8 @@ extension LBExpandController{
             /// 默认所有的组都是闭合的
             sectionStateArray.add("0")
         }
+        lbexpandTableView.dataSourceArray = dataSourceArray as! [[String]]
+        lbexpandTableView.sectionStateArray = sectionStateArray
+//        lbexpandTableView.sectionTitleArray = sectionTitleArray as! NSMutableArray
     }
 }

@@ -18,12 +18,5 @@ class LBExpandCell: UITableViewCell {
 
 }
 extension LBExpandCell{
-    class func cellWithTableView(tableview:UITableView) -> LBExpandCell{
-        let cell = tableview.dequeueReusableCell(withIdentifier: "LBExpandCell") as! LBExpandCell
-//        if !cell {
-//
-//        }
-        
-        return cell
-    }
+  
 }

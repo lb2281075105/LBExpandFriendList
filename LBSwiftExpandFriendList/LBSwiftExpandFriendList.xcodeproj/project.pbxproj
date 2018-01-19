@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F44279A5FE6D681321436603 /* Pods_LBSwiftExpandFriendList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057B628049370DE87E0CE1E8 /* Pods_LBSwiftExpandFriendList.framework */; };
 		F87641E72011C58F001316AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87641E62011C58F001316AF /* AppDelegate.swift */; };
 		F87641EE2011C58F001316AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87641ED2011C58F001316AF /* Assets.xcassets */; };
 		F87641F12011C58F001316AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87641EF2011C58F001316AF /* LaunchScreen.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		057B628049370DE87E0CE1E8 /* Pods_LBSwiftExpandFriendList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBSwiftExpandFriendList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBFB518F168258FE52856A17 /* Pods-LBSwiftExpandFriendList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBSwiftExpandFriendList.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList.release.xcconfig"; sourceTree = "<group>"; };
 		F87641E32011C58F001316AF /* LBSwiftExpandFriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBSwiftExpandFriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87641E62011C58F001316AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87641ED2011C58F001316AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		F87642152011C613001316AF /* LBExpandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBExpandController.swift; sourceTree = "<group>"; };
 		F87642172011CAD8001316AF /* LBExpandTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBExpandTableView.swift; sourceTree = "<group>"; };
 		F87642192011CE7C001316AF /* LBExpandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBExpandCell.swift; sourceTree = "<group>"; };
+		FC046A6B904F925EAC2D404C /* Pods-LBSwiftExpandFriendList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBSwiftExpandFriendList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F44279A5FE6D681321436603 /* Pods_LBSwiftExpandFriendList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86E21B4F1A5ACBD32254ECF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				057B628049370DE87E0CE1E8 /* Pods_LBSwiftExpandFriendList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6F7723AAC4224FC3FD07161 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC046A6B904F925EAC2D404C /* Pods-LBSwiftExpandFriendList.debug.xcconfig */,
+				DBFB518F168258FE52856A17 /* Pods-LBSwiftExpandFriendList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F87641DA2011C58F001316AF = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,8 @@
 				F87641FA2011C58F001316AF /* LBSwiftExpandFriendListTests */,
 				F87642052011C58F001316AF /* LBSwiftExpandFriendListUITests */,
 				F87641E42011C58F001316AF /* Products */,
+				D6F7723AAC4224FC3FD07161 /* Pods */,
+				86E21B4F1A5ACBD32254ECF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F876420B2011C58F001316AF /* Build configuration list for PBXNativeTarget "LBSwiftExpandFriendList" */;
 			buildPhases = (
+				5D81CA43FBAFC45FA2943C92 /* [CP] Check Pods Manifest.lock */,
 				F87641DF2011C58F001316AF /* Sources */,
 				F87641E02011C58F001316AF /* Frameworks */,
 				F87641E12011C58F001316AF /* Resources */,
+				BC4E1AEFBD01493296859F38 /* [CP] Embed Pods Frameworks */,
+				5F7697F9337661174C2E3278 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +290,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D81CA43FBAFC45FA2943C92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LBSwiftExpandFriendList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F7697F9337661174C2E3278 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC4E1AEFBD01493296859F38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F87641DF2011C58F001316AF /* Sources */ = {
@@ -428,12 +509,13 @@
 		};
 		F876420C2011C58F001316AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC046A6B904F925EAC2D404C /* Pods-LBSwiftExpandFriendList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MECQS3Z269;
 				INFOPLIST_FILE = LBSwiftExpandFriendList/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LBSwiftExpandFriendList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,12 +526,13 @@
 		};
 		F876420D2011C58F001316AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBFB518F168258FE52856A17 /* Pods-LBSwiftExpandFriendList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MECQS3Z269;
 				INFOPLIST_FILE = LBSwiftExpandFriendList/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LBSwiftExpandFriendList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
