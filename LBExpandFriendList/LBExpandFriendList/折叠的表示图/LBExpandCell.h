@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Masonry.h"
 @interface LBExpandCell : UITableViewCell
-
++ (instancetype)cellWithTableView:(UITableView *)tableview;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end

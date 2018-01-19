@@ -8,12 +8,15 @@
 
 #import "LBExpandController.h"
 #import "LBExpandCell.h"
-@interface LBExpandController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic, strong)UITableView *lbexpandTableView;
-@property (nonatomic, strong)NSMutableArray *dataSource;
-@property (nonatomic, strong)NSMutableArray *sectionArray;
-@property (nonatomic, strong)NSMutableArray *stateArray;
-
+#import "LBExpandTableView.h"
+@interface LBExpandController ()
+@property (nonatomic, strong)LBExpandTableView *lbexpandTableView;
+/// 所有组的数据
+@property (nonatomic, strong)NSMutableArray *dataSourceArray;
+/// 组标题
+@property (nonatomic, strong)NSMutableArray *sectionTitleArray;
+/// 每组展开状态
+@property (nonatomic, strong)NSMutableArray *sectionStateArray;
 @end
 
 @implementation LBExpandController
@@ -30,53 +33,31 @@
     [self addTableView];
 }
 -(void)addTableView{
-    _lbexpandTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    _lbexpandTableView.dataSource = self;
-    _lbexpandTableView.delegate =  self;
+    _lbexpandTableView = [[LBExpandTableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     _lbexpandTableView.tableFooterView = [UIView new];
-    [_lbexpandTableView registerNib:[UINib nibWithNibName:@"ExpandCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    _lbexpandTableView.sectionTitleArray = _sectionTitleArray;
+    _lbexpandTableView.sectionStateArray = _sectionStateArray;
+    _lbexpandTableView.dataSourceArray = _dataSourceArray;
     [self.view addSubview:_lbexpandTableView];
 }
 - (void)addData{
-    _sectionArray  = [NSMutableArray arrayWithObjects:@"一级分类",
-                     @"一级分类",
-                     @"一级分类",
-                     @"一级分类",nil];
+    _sectionTitleArray  = [NSMutableArray arrayWithObjects:@"一级分类",@"一级分类",@"一级分类",@"一级分类",nil];
     
-    NSArray *one = @[@"二级分类",@"二级分类",@"二级分类"];
-    NSArray *two = @[@"二级分类",@"二级分类",@"二级分类"];
-    NSArray *three = @[@"二级分类",@"二级分类",@"二级分类"];
-    NSArray *four = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *one = @[@"1、二级分类",@"二级分类"];
+    NSArray *two = @[@"2、二级分类",@"二级分类",@"二级分类"];
+    NSArray *three = @[@"3、二级分类",@"二级分类",@"二级分类"];
+    NSArray *four = @[@"4、二级分类",@"二级分类",@"二级分类",@"二级分类"];
     
-    _dataSource = [NSMutableArray arrayWithObjects:one,two,three,four, nil];
-    _stateArray = [NSMutableArray array];
-    
-    for (int i = 0; i < _dataSource.count; i++)
+    _dataSourceArray = [NSMutableArray arrayWithObjects:one,two,three,four, nil];
+    _sectionStateArray = [NSMutableArray array];
+
+    for (int i = 0; i < _dataSourceArray.count; i++)
     {
-        //所有的分区都是闭合
-        [_stateArray addObject:@"0"];
+        /// 默认所有的组都是闭合的
+        [_sectionStateArray addObject:@"0"];
     }
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return _dataSource.count;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    LBExpandCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//    cell.listLabel.textAlignment = NSTextAlignmentLeft;
-//    cell.listLabel.text = _dataSource[indexPath.section][indexPath.row];
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    cell.contentView.backgroundColor = [UIColor whiteColor];
-    return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return _sectionArray[section];
-}
 
 
 @end
