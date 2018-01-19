@@ -17,7 +17,7 @@
         cell = [[LBExpandCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LBExpandCell"];
     }
     tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
