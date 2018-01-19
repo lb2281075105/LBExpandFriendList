@@ -14,6 +14,14 @@
 		F876415E20118055001316AF /* LBExpandFriendListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F876415D20118055001316AF /* LBExpandFriendListTests.m */; };
 		F876416920118055001316AF /* LBExpandFriendListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F876416820118055001316AF /* LBExpandFriendListUITests.m */; };
 		F876417C201181F5001316AF /* LBExpandController.m in Sources */ = {isa = PBXBuildFile; fileRef = F876417B201181F5001316AF /* LBExpandController.m */; };
+		F876417F2011863D001316AF /* LBExpandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F876417E2011863D001316AF /* LBExpandCell.m */; };
+		F87641882011868A001316AF /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641812011868A001316AF /* header.png */; };
+		F87641892011868A001316AF /* ico_faq_d.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641822011868A001316AF /* ico_faq_d.png */; };
+		F876418A2011868A001316AF /* ico_list.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641832011868A001316AF /* ico_list.png */; };
+		F876418B2011868A001316AF /* ico_listdown.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641842011868A001316AF /* ico_listdown.png */; };
+		F876418C2011868A001316AF /* ico_listup.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641852011868A001316AF /* ico_listup.png */; };
+		F876418D2011868A001316AF /* line_real.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641862011868A001316AF /* line_real.png */; };
+		F876418E2011868A001316AF /* QQList.gif in Resources */ = {isa = PBXBuildFile; fileRef = F87641872011868A001316AF /* QQList.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,15 @@
 		F876416A20118055001316AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F876417A201181F5001316AF /* LBExpandController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBExpandController.h; sourceTree = "<group>"; };
 		F876417B201181F5001316AF /* LBExpandController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBExpandController.m; sourceTree = "<group>"; };
+		F876417D2011863D001316AF /* LBExpandCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBExpandCell.h; sourceTree = "<group>"; };
+		F876417E2011863D001316AF /* LBExpandCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBExpandCell.m; sourceTree = "<group>"; };
+		F87641812011868A001316AF /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
+		F87641822011868A001316AF /* ico_faq_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_faq_d.png; sourceTree = "<group>"; };
+		F87641832011868A001316AF /* ico_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_list.png; sourceTree = "<group>"; };
+		F87641842011868A001316AF /* ico_listdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_listdown.png; sourceTree = "<group>"; };
+		F87641852011868A001316AF /* ico_listup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_listup.png; sourceTree = "<group>"; };
+		F87641862011868A001316AF /* line_real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_real.png; sourceTree = "<group>"; };
+		F87641872011868A001316AF /* QQList.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = QQList.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +120,7 @@
 				F876414520118055001316AF /* AppDelegate.m */,
 				F8764176201181A5001316AF /* 折叠的表示图 */,
 				F876414D20118055001316AF /* Assets.xcassets */,
+				F87641802011868A001316AF /* Resources */,
 				F876414F20118055001316AF /* LaunchScreen.storyboard */,
 				F876415220118055001316AF /* Info.plist */,
 				F876415320118055001316AF /* main.m */,
@@ -133,8 +151,24 @@
 			children = (
 				F876417A201181F5001316AF /* LBExpandController.h */,
 				F876417B201181F5001316AF /* LBExpandController.m */,
+				F876417D2011863D001316AF /* LBExpandCell.h */,
+				F876417E2011863D001316AF /* LBExpandCell.m */,
 			);
 			path = "折叠的表示图";
+			sourceTree = "<group>";
+		};
+		F87641802011868A001316AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F87641812011868A001316AF /* header.png */,
+				F87641822011868A001316AF /* ico_faq_d.png */,
+				F87641832011868A001316AF /* ico_list.png */,
+				F87641842011868A001316AF /* ico_listdown.png */,
+				F87641852011868A001316AF /* ico_listup.png */,
+				F87641862011868A001316AF /* line_real.png */,
+				F87641872011868A001316AF /* QQList.gif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +277,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F876418C2011868A001316AF /* ico_listup.png in Resources */,
+				F876418E2011868A001316AF /* QQList.gif in Resources */,
+				F87641882011868A001316AF /* header.png in Resources */,
+				F87641892011868A001316AF /* ico_faq_d.png in Resources */,
+				F876418D2011868A001316AF /* line_real.png in Resources */,
 				F876415120118055001316AF /* LaunchScreen.storyboard in Resources */,
+				F876418B2011868A001316AF /* ico_listdown.png in Resources */,
+				F876418A2011868A001316AF /* ico_list.png in Resources */,
 				F876414E20118055001316AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +313,7 @@
 				F876417C201181F5001316AF /* LBExpandController.m in Sources */,
 				F876415420118055001316AF /* main.m in Sources */,
 				F876414620118055001316AF /* AppDelegate.m in Sources */,
+				F876417F2011863D001316AF /* LBExpandCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
