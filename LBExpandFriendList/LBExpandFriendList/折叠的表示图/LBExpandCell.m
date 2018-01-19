@@ -8,10 +8,7 @@
 
 #import "LBExpandCell.h"
 
-@implementation LBExpandCell{
-    UILabel *_titleLabel;
-    UIImageView *_imageView;
-}
+@implementation LBExpandCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableview{
     
@@ -23,8 +20,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
--(void)setDataArray:(NSMutableArray *)dataArray{
-    _dataArray = dataArray;
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
 }
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     
@@ -48,12 +46,11 @@
     }];
     /// 标题
     _titleLabel = [[UILabel alloc]init];
-    _titleLabel.text = @"wo de shi jie";
+    _titleLabel.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(weakSelf);
-        make.left.mas_equalTo(_imageView.mas_right).offset(40);
+        make.left.mas_equalTo(_imageView.mas_right).offset(25);
     }];
-    
 }
 @end

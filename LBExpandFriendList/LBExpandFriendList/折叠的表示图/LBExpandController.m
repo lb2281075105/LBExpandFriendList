@@ -41,14 +41,20 @@
     [self.view addSubview:_lbexpandTableView];
 }
 - (void)addData{
-    _sectionTitleArray  = [NSMutableArray arrayWithObjects:@"一级分类",@"一级分类",@"一级分类",@"一级分类",nil];
-    
-    NSArray *one = @[@"1、二级分类",@"二级分类"];
-    NSArray *two = @[@"2、二级分类",@"二级分类",@"二级分类"];
-    NSArray *three = @[@"3、二级分类",@"二级分类",@"二级分类"];
-    NSArray *four = @[@"4、二级分类",@"二级分类",@"二级分类",@"二级分类"];
-    
-    _dataSourceArray = [NSMutableArray arrayWithObjects:one,two,three,four, nil];
+    /// 下面数据十测试实例
+    /// 10个一级分类,每个大分类下面有对应的小分类
+    _sectionTitleArray  = [NSMutableArray arrayWithObjects:@"一级分类",@"一级分类",@"一级分类",@"一级分类",@"一级分类",@"一级分类",@"一级分类",@"一级分类",@"一级分类",@"一级分类",@"一级分类",nil];
+    NSArray *zero = @[@"二级分类"];
+    NSArray *one = @[@"二级分类",@"二级分类"];
+    NSArray *two = @[@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *three = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *four = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *five = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *six = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *seven = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *eight = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    NSArray *nine = @[@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类",@"二级分类"];
+    _dataSourceArray = [NSMutableArray arrayWithObjects:zero,one,two,three,four,five,six,seven,eight,nine,nil];
     _sectionStateArray = [NSMutableArray array];
 
     for (int i = 0; i < _dataSourceArray.count; i++)
@@ -57,7 +63,4 @@
         [_sectionStateArray addObject:@"0"];
     }
 }
-
-
-
 @end

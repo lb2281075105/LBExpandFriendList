@@ -8,6 +8,7 @@
 
 #import "LBExpandTableView.h"
 #import "LBExpandCell.h"
+#import "UIColor+colorWithHex.h"
 #define LBCellHeight 44
 @implementation LBExpandTableView
 
@@ -35,15 +36,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    LBExpandCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBExpandCell"];
-//    //    cell.listLabel.textAlignment = NSTextAlignmentLeft;
-//    //    cell.listLabel.text = _dataSource[indexPath.section][indexPath.row];
-//    cell.backgroundColor = [UIColor whiteColor];
-//    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-//    cell.contentView.backgroundColor = [UIColor whiteColor];
-//    cell.textLabel.text = _sectionTitleArray[indexPath.row];
     LBExpandCell *cell = [LBExpandCell cellWithTableView:tableView];
-    cell.dataArray = _dataSourceArray;
+    cell.titleLabel.text = [NSString stringWithFormat:@"%ld组 %@",(long)indexPath.section,_dataSourceArray[indexPath.section][indexPath.row]];
     return cell;
 }
 
@@ -63,7 +57,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(0, 0, self.frame.size.width, LBCellHeight)];
     button.tag = section + 1;
-    button.backgroundColor = [UIColor grayColor];
+    button.backgroundColor = [UIColor whiteColor];
     [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 60)];
     [button addTarget:self action:@selector(sectionButtonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -80,10 +74,10 @@
     }];
     /// 添加左边图标
     UIImageView *leftImgView = [[UIImageView alloc]init];
-    [leftImgView setImage:[UIImage imageNamed:@"leftIcon"]];
+    [leftImgView setImage:[UIImage imageNamed:@"circle"]];
     [button addSubview:leftImgView];
     [leftImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.equalTo(@20);
+        make.width.height.equalTo(@24);
         make.left.equalTo(button).offset(10);
         make.centerY.equalTo(button);
     }];
@@ -137,10 +131,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return LBCellHeight;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.00001;
-}
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return LBCellHeight;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end

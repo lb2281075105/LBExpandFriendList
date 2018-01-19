@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
-@interface LBExpandCell : UITableViewCell
+@interface LBExpandCell : UITableViewCell{
+    UIImageView *_imageView;
+}
 + (instancetype)cellWithTableView:(UITableView *)tableview;
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) UILabel *titleLabel;
 @end
