@@ -10,17 +10,17 @@ import UIKit
 
 class LBExpandController: UIViewController {
     /// 所有组的数据
-    lazy var dataSourceArray = NSMutableArray()
+    lazy var dataSourceArray:[[String]] = [[String]]()
     /// 组标题
     lazy var sectionTitleArray = { () -> [String] in
         let titleArray = ["一级分类","一级分类","一级分类","一级分类","一级分类","一级分类","一级分类","一级分类","一级分类","一级分类","一级分类"]
         return titleArray
     }()
     /// 每组展开状态
-    lazy var sectionStateArray = NSMutableArray()
+    lazy var sectionStateArray:[String] = [String]()
     /// 表示图
     lazy var lbexpandTableView:LBExpandTableView = {
-        let expandTableView = LBExpandTableView.init(frame: UIScreen.main.bounds, style: .grouped)
+        let expandTableView = LBExpandTableView.init(frame: UIScreen.main.bounds, style: .plain)
         return expandTableView
     }()
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class LBExpandController: UIViewController {
         view.backgroundColor = UIColor.white
         /// 添加表示图数据
         addData()
+        view.addSubview(lbexpandTableView)
     }
 
 }
@@ -45,14 +46,23 @@ extension LBExpandController{
         let seven = ["二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类"];
         let eight = ["二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类"];
         let nine = ["二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类","二级分类"];
-        dataSourceArray.addObjects(from: [zero,one,two,three,four,five,six,seven,eight,nine])
+        dataSourceArray.append(zero)
+        dataSourceArray.append(one)
+        dataSourceArray.append(two)
+        dataSourceArray.append(three)
+        dataSourceArray.append(four)
+        dataSourceArray.append(five)
+        dataSourceArray.append(six)
+        dataSourceArray.append(seven)
+        dataSourceArray.append(eight)
+        dataSourceArray.append(nine)
         
         for _ in dataSourceArray {
             /// 默认所有的组都是闭合的
-            sectionStateArray.add("0")
+            sectionStateArray.append("0")
         }
-        lbexpandTableView.dataSourceArray = dataSourceArray as! [[String]]
+        lbexpandTableView.dataSourceArray = dataSourceArray
         lbexpandTableView.sectionStateArray = sectionStateArray
-//        lbexpandTableView.sectionTitleArray = sectionTitleArray as! NSMutableArray
+        lbexpandTableView.sectionTitleArray = sectionTitleArray
     }
 }

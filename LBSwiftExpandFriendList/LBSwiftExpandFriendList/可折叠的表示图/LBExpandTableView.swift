@@ -11,11 +11,14 @@ import SnapKit
 let LBCellHeight = 44
 
 class LBExpandTableView: UITableView {
-    lazy var sectionTitleArray = NSMutableArray()
-    lazy var sectionStateArray = NSMutableArray()
-    lazy var dataSourceArray:[[String]] = NSMutableArray() as! [[String]]
+    lazy var sectionTitleArray:[String] = [String]()
+    lazy var sectionStateArray:[String] = [String]()
+    lazy var dataSourceArray:[[String]] = [[String]]()
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
+        self.delegate = self
+        self.dataSource = self
+        self.register(LBExpandCell.self, forCellReuseIdentifier: "LBExpandCell")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,21 +26,22 @@ class LBExpandTableView: UITableView {
     }
     
 }
-extension LBExpandController:UITableViewDelegate,UITableViewDataSource{
+extension LBExpandTableView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let index = sectionStateArray[section]
         
-//        if var sectionStateArray[section] == "1" {
-//            /// 组展开状态
-//            let array = dataSourceArray.object(at: section)
-//            return array.count
-//        }
+        if index == "1" {
+            /// 组展开状态
+            let array = dataSourceArray[section]
+            return array.count
+        }
         /// 组闭合状态,返回0
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LBExpandCell") as!LBExpandCell
-//        cell.titleLabel.text = "\(indexPath.section)组 \(dataSourceArray[indexPath.section][indexPath.row])"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LBExpandCell")as!LBExpandCell
+        cell.titleLabel.text = "\(indexPath.section)组 \(dataSourceArray[indexPath.section][indexPath.row])"
         return cell;
     }
     
@@ -47,6 +51,15 @@ extension LBExpandController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitleArray[section]
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(LBCellHeight)
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(LBCellHeight)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         /// 添加按钮到组头视图
         let button = UIButton.init(type: .custom)
@@ -54,11 +67,9 @@ extension LBExpandController:UITableViewDelegate,UITableViewDataSource{
         button.tag = section + 1
         button.backgroundColor = UIColor.white
         button.setTitleColor(UIColor.gray, for: .normal)
-        button.addTarget(self, action: #selector(LBExpandController.sectionButtonClick), for: .touchUpInside)
-        
-//        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 60)];
+        button.addTarget(self, action: #selector(LBExpandTableView.sectionButtonClick(button:)), for: .touchUpInside)
+        button.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 60)
         /// 添加底部线
-        
         let line = UIImageView()
         line.image = UIImage.init(named: "line")
         button.addSubview(line)
@@ -86,17 +97,19 @@ extension LBExpandController:UITableViewDelegate,UITableViewDataSource{
             make.centerY.equalTo(button);
             make.left.equalTo(button.snp.left).offset(UIScreen.main.bounds.size.width - 30);
         }
-
-//        if ([_sectionStateArray[section] isEqualToString:@"0"]) {
-//            arrowImgView.image = [UIImage imageNamed:@"bottomArrow"];
-//        }else if ([_sectionStateArray[section] isEqualToString:@"1"]) {
-//            arrowImgView.image = [UIImage imageNamed:@"topArrow"];
-//        }
+        let state = sectionStateArray[section]
+        
+        if state == "0" {
+            arrowImgView.image = UIImage.init(named: "bottomArrow");
+        }else if state == "1" {
+            arrowImgView.image = UIImage.init(named: "topArrow")
+        }
         /// 每组个数
         let countLabel = UILabel()
         countLabel.backgroundColor = UIColor.clear
         countLabel.font = UIFont.systemFont(ofSize: 14)
-        countLabel.text = "\((dataSourceArray[section] as AnyObject).count)"
+        let dataArray = dataSourceArray[section].count
+        countLabel.text = "\(dataArray)"
         button.addSubview(countLabel)
         countLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(button);
@@ -116,8 +129,20 @@ extension LBExpandController:UITableViewDelegate,UITableViewDataSource{
         return button;
     }
 }
-extension LBExpandController{
-    @objc func sectionButtonClick(){
+extension LBExpandTableView{
+    @objc func sectionButtonClick(button:UIButton){
         
+        /// 判断点击组被点击的状态值
+        let state = sectionStateArray[button.tag - 1]
+        
+        if (state == "1"){
+            /// 修改点击的状态值
+            sectionStateArray[button.tag - 1] = "0"
+        }else{
+            sectionStateArray[button.tag - 1] = "1"
+        }
+        /// 刷新组
+        let indexSet = NSIndexSet.init(index: button.tag - 1) as IndexSet
+        reloadSections(indexSet, with: .automatic)
     }
 }

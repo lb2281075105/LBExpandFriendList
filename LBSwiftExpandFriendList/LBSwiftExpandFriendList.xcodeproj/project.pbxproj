@@ -16,6 +16,11 @@
 		F87642162011C613001316AF /* LBExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87642152011C613001316AF /* LBExpandController.swift */; };
 		F87642182011CAD8001316AF /* LBExpandTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87642172011CAD8001316AF /* LBExpandTableView.swift */; };
 		F876421A2011CE7C001316AF /* LBExpandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87642192011CE7C001316AF /* LBExpandCell.swift */; };
+		F87DE4CD2012DE9D005A4E15 /* bottomArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4C72012DE9D005A4E15 /* bottomArrow.png */; };
+		F87DE4CE2012DE9D005A4E15 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4C82012DE9D005A4E15 /* circle.png */; };
+		F87DE4CF2012DE9D005A4E15 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4C92012DE9D005A4E15 /* line.png */; };
+		F87DE4D02012DE9D005A4E15 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4CA2012DE9D005A4E15 /* rightArrow.png */; };
+		F87DE4D12012DE9D005A4E15 /* topArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4CB2012DE9D005A4E15 /* topArrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,11 @@
 		F87642152011C613001316AF /* LBExpandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBExpandController.swift; sourceTree = "<group>"; };
 		F87642172011CAD8001316AF /* LBExpandTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBExpandTableView.swift; sourceTree = "<group>"; };
 		F87642192011CE7C001316AF /* LBExpandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBExpandCell.swift; sourceTree = "<group>"; };
+		F87DE4C72012DE9D005A4E15 /* bottomArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomArrow.png; sourceTree = "<group>"; };
+		F87DE4C82012DE9D005A4E15 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		F87DE4C92012DE9D005A4E15 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		F87DE4CA2012DE9D005A4E15 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		F87DE4CB2012DE9D005A4E15 /* topArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topArrow.png; sourceTree = "<group>"; };
 		FC046A6B904F925EAC2D404C /* Pods-LBSwiftExpandFriendList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBSwiftExpandFriendList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F87641E62011C58F001316AF /* AppDelegate.swift */,
+				F87DE4C62012DE9D005A4E15 /* image */,
 				F87642142011C5F5001316AF /* 可折叠的表示图 */,
 				F87641ED2011C58F001316AF /* Assets.xcassets */,
 				F87641EF2011C58F001316AF /* LaunchScreen.storyboard */,
@@ -158,6 +169,18 @@
 				F87642192011CE7C001316AF /* LBExpandCell.swift */,
 			);
 			path = "可折叠的表示图";
+			sourceTree = "<group>";
+		};
+		F87DE4C62012DE9D005A4E15 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				F87DE4C72012DE9D005A4E15 /* bottomArrow.png */,
+				F87DE4C82012DE9D005A4E15 /* circle.png */,
+				F87DE4C92012DE9D005A4E15 /* line.png */,
+				F87DE4CA2012DE9D005A4E15 /* rightArrow.png */,
+				F87DE4CB2012DE9D005A4E15 /* topArrow.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87641F12011C58F001316AF /* LaunchScreen.storyboard in Resources */,
+				F87DE4D12012DE9D005A4E15 /* topArrow.png in Resources */,
+				F87DE4CF2012DE9D005A4E15 /* line.png in Resources */,
 				F87641EE2011C58F001316AF /* Assets.xcassets in Resources */,
+				F87DE4CD2012DE9D005A4E15 /* bottomArrow.png in Resources */,
+				F87DE4D02012DE9D005A4E15 /* rightArrow.png in Resources */,
+				F87DE4CE2012DE9D005A4E15 /* circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
