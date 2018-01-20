@@ -37,6 +37,12 @@
 		F87DE4DA2012EE50005A4E15 /* LBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4D92012EE50005A4E15 /* LBHomeController.m */; };
 		F87DE4DD2012EF2D005A4E15 /* LBHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4DC2012EF2D005A4E15 /* LBHomeTableView.m */; };
 		F87DE4E02012F020005A4E15 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4DF2012F020005A4E15 /* LBHomeCell.m */; };
+		F87DE4E4201306A1005A4E15 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4E3201306A1005A4E15 /* UIView+ViewController.m */; };
+		F87DE4EA20130838005A4E15 /* LBQQFriendListController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4E920130838005A4E15 /* LBQQFriendListController.m */; };
+		F87DE4ED20130942005A4E15 /* LBQQFriendTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4EC20130942005A4E15 /* LBQQFriendTableView.m */; };
+		F87DE4F020130AD9005A4E15 /* LBQQFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4EF20130AD9005A4E15 /* LBQQFriendCell.m */; };
+		F87DE4F420130BB4005A4E15 /* LBQQGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4F320130BB4005A4E15 /* LBQQGroupModel.m */; };
+		F87DE522201321EC005A4E15 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F87DE521201321EC005A4E15 /* icon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +122,17 @@
 		F87DE4DC2012EF2D005A4E15 /* LBHomeTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeTableView.m; sourceTree = "<group>"; };
 		F87DE4DE2012F020005A4E15 /* LBHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeCell.h; sourceTree = "<group>"; };
 		F87DE4DF2012F020005A4E15 /* LBHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
+		F87DE4E2201306A1005A4E15 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
+		F87DE4E3201306A1005A4E15 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		F87DE4E820130838005A4E15 /* LBQQFriendListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBQQFriendListController.h; sourceTree = "<group>"; };
+		F87DE4E920130838005A4E15 /* LBQQFriendListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBQQFriendListController.m; sourceTree = "<group>"; };
+		F87DE4EB20130942005A4E15 /* LBQQFriendTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBQQFriendTableView.h; sourceTree = "<group>"; };
+		F87DE4EC20130942005A4E15 /* LBQQFriendTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBQQFriendTableView.m; sourceTree = "<group>"; };
+		F87DE4EE20130AD9005A4E15 /* LBQQFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBQQFriendCell.h; sourceTree = "<group>"; };
+		F87DE4EF20130AD9005A4E15 /* LBQQFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBQQFriendCell.m; sourceTree = "<group>"; };
+		F87DE4F220130BB4005A4E15 /* LBQQGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBQQGroupModel.h; sourceTree = "<group>"; };
+		F87DE4F320130BB4005A4E15 /* LBQQGroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBQQGroupModel.m; sourceTree = "<group>"; };
+		F87DE521201321EC005A4E15 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +232,7 @@
 		F876418F20118770001316AF /* common */ = {
 			isa = PBXGroup;
 			children = (
+				F87DE4E1201306A1005A4E15 /* UIView+ViewController */,
 				F87641BF2011B9A5001316AF /* Color */,
 				F876419020118770001316AF /* Masonry */,
 			);
@@ -266,6 +284,7 @@
 		F87641CD2011BEB3001316AF /* image */ = {
 			isa = PBXGroup;
 			children = (
+				F87DE521201321EC005A4E15 /* icon.jpg */,
 				F87641D82011C2AC001316AF /* 折叠表示图.gif */,
 				F87641CE2011BEB3001316AF /* bottomArrow.png */,
 				F87641CF2011BEB3001316AF /* circle.png */,
@@ -279,6 +298,13 @@
 		F87DE4D32012EDF7005A4E15 /* QQ好友列表 */ = {
 			isa = PBXGroup;
 			children = (
+				F87DE4F120130B9F005A4E15 /* model */,
+				F87DE4E820130838005A4E15 /* LBQQFriendListController.h */,
+				F87DE4E920130838005A4E15 /* LBQQFriendListController.m */,
+				F87DE4EB20130942005A4E15 /* LBQQFriendTableView.h */,
+				F87DE4EC20130942005A4E15 /* LBQQFriendTableView.m */,
+				F87DE4EE20130AD9005A4E15 /* LBQQFriendCell.h */,
+				F87DE4EF20130AD9005A4E15 /* LBQQFriendCell.m */,
 			);
 			path = "QQ好友列表";
 			sourceTree = "<group>";
@@ -295,6 +321,25 @@
 			);
 			path = home;
 			sourceTree = "<group>";
+		};
+		F87DE4E1201306A1005A4E15 /* UIView+ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F87DE4E2201306A1005A4E15 /* UIView+ViewController.h */,
+				F87DE4E3201306A1005A4E15 /* UIView+ViewController.m */,
+			);
+			path = "UIView+ViewController";
+			sourceTree = "<group>";
+		};
+		F87DE4F120130B9F005A4E15 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F87DE4F220130BB4005A4E15 /* LBQQGroupModel.h */,
+				F87DE4F320130BB4005A4E15 /* LBQQGroupModel.m */,
+			);
+			name = model;
+			path = LBExpandFriendList/model;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -408,6 +453,7 @@
 				F87641AB20118770001316AF /* Info.plist in Resources */,
 				F87641D52011BEB3001316AF /* line.png in Resources */,
 				F876414E20118055001316AF /* Assets.xcassets in Resources */,
+				F87DE522201321EC005A4E15 /* icon.jpg in Resources */,
 				F87641D42011BEB3001316AF /* circle.png in Resources */,
 				F87641D62011BEB3001316AF /* rightArrow.png in Resources */,
 				F87641D32011BEB3001316AF /* bottomArrow.png in Resources */,
@@ -436,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87641AE20118770001316AF /* MASConstraintMaker.m in Sources */,
+				F87DE4F420130BB4005A4E15 /* LBQQGroupModel.m in Sources */,
 				F876417C201181F5001316AF /* LBExpandController.m in Sources */,
 				F876415420118055001316AF /* main.m in Sources */,
 				F87641AD20118770001316AF /* MASConstraint.m in Sources */,
@@ -446,8 +493,12 @@
 				F87DE4DD2012EF2D005A4E15 /* LBHomeTableView.m in Sources */,
 				F87641B120118770001316AF /* MASViewConstraint.m in Sources */,
 				F87641C22011B9A6001316AF /* UIColor+colorWithHex.m in Sources */,
+				F87DE4F020130AD9005A4E15 /* LBQQFriendCell.m in Sources */,
+				F87DE4EA20130838005A4E15 /* LBQQFriendListController.m in Sources */,
 				F87641B020118770001316AF /* MASViewAttribute.m in Sources */,
+				F87DE4ED20130942005A4E15 /* LBQQFriendTableView.m in Sources */,
 				F87DE4E02012F020005A4E15 /* LBHomeCell.m in Sources */,
+				F87DE4E4201306A1005A4E15 /* UIView+ViewController.m in Sources */,
 				F87641B420118770001316AF /* View+MASAdditions.m in Sources */,
 				F876414620118055001316AF /* AppDelegate.m in Sources */,
 				F876417F2011863D001316AF /* LBExpandCell.m in Sources */,

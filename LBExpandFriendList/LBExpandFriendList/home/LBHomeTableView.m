@@ -8,6 +8,9 @@
 
 #import "LBHomeTableView.h"
 #import "LBHomeCell.h"
+#import "UIView+ViewController.h"
+#import "LBExpandController.h"
+#import "LBQQFriendListController.h"
 @implementation LBHomeTableView
 
 -(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
@@ -34,6 +37,12 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 0){
+        [self.viewController.navigationController pushViewController:[[LBExpandController alloc]init] animated:YES];
+    }else{
+        [self.viewController.navigationController pushViewController:[[LBQQFriendListController alloc]init] animated:YES];
+    }
+    
     
 }
 @end
