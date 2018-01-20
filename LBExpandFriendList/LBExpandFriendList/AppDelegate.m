@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LBExpandController.h"
+#import "LBHomeController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +19,7 @@
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[LBExpandController alloc]init]];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[LBHomeController alloc]init]];
     
     return YES;
 }

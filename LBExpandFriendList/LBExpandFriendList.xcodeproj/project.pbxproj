@@ -34,6 +34,9 @@
 		F87641D62011BEB3001316AF /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641D12011BEB3001316AF /* rightArrow.png */; };
 		F87641D72011BEB3001316AF /* topArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F87641D22011BEB3001316AF /* topArrow.png */; };
 		F87641D92011C2AC001316AF /* 折叠表示图.gif in Resources */ = {isa = PBXBuildFile; fileRef = F87641D82011C2AC001316AF /* 折叠表示图.gif */; };
+		F87DE4DA2012EE50005A4E15 /* LBHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4D92012EE50005A4E15 /* LBHomeController.m */; };
+		F87DE4DD2012EF2D005A4E15 /* LBHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4DC2012EF2D005A4E15 /* LBHomeTableView.m */; };
+		F87DE4E02012F020005A4E15 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE4DF2012F020005A4E15 /* LBHomeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,12 @@
 		F87641D12011BEB3001316AF /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		F87641D22011BEB3001316AF /* topArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topArrow.png; sourceTree = "<group>"; };
 		F87641D82011C2AC001316AF /* 折叠表示图.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "折叠表示图.gif"; sourceTree = "<group>"; };
+		F87DE4D82012EE50005A4E15 /* LBHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeController.h; sourceTree = "<group>"; };
+		F87DE4D92012EE50005A4E15 /* LBHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeController.m; sourceTree = "<group>"; };
+		F87DE4DB2012EF2D005A4E15 /* LBHomeTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeTableView.h; sourceTree = "<group>"; };
+		F87DE4DC2012EF2D005A4E15 /* LBHomeTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeTableView.m; sourceTree = "<group>"; };
+		F87DE4DE2012F020005A4E15 /* LBHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeCell.h; sourceTree = "<group>"; };
+		F87DE4DF2012F020005A4E15 /* LBHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +168,8 @@
 			children = (
 				F876414420118055001316AF /* AppDelegate.h */,
 				F876414520118055001316AF /* AppDelegate.m */,
+				F87DE4D72012EE50005A4E15 /* home */,
+				F87DE4D32012EDF7005A4E15 /* QQ好友列表 */,
 				F8764176201181A5001316AF /* 折叠的表示图 */,
 				F876414D20118055001316AF /* Assets.xcassets */,
 				F876414F20118055001316AF /* LaunchScreen.storyboard */,
@@ -263,6 +274,26 @@
 				F87641D22011BEB3001316AF /* topArrow.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		F87DE4D32012EDF7005A4E15 /* QQ好友列表 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "QQ好友列表";
+			sourceTree = "<group>";
+		};
+		F87DE4D72012EE50005A4E15 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				F87DE4D82012EE50005A4E15 /* LBHomeController.h */,
+				F87DE4D92012EE50005A4E15 /* LBHomeController.m */,
+				F87DE4DB2012EF2D005A4E15 /* LBHomeTableView.h */,
+				F87DE4DC2012EF2D005A4E15 /* LBHomeTableView.m */,
+				F87DE4DE2012F020005A4E15 /* LBHomeCell.h */,
+				F87DE4DF2012F020005A4E15 /* LBHomeCell.m */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,13 +443,16 @@
 				F87641B520118770001316AF /* ViewController+MASAdditions.m in Sources */,
 				F87641AF20118770001316AF /* MASLayoutConstraint.m in Sources */,
 				F87641B220118770001316AF /* NSArray+MASAdditions.m in Sources */,
+				F87DE4DD2012EF2D005A4E15 /* LBHomeTableView.m in Sources */,
 				F87641B120118770001316AF /* MASViewConstraint.m in Sources */,
 				F87641C22011B9A6001316AF /* UIColor+colorWithHex.m in Sources */,
 				F87641B020118770001316AF /* MASViewAttribute.m in Sources */,
+				F87DE4E02012F020005A4E15 /* LBHomeCell.m in Sources */,
 				F87641B420118770001316AF /* View+MASAdditions.m in Sources */,
 				F876414620118055001316AF /* AppDelegate.m in Sources */,
 				F876417F2011863D001316AF /* LBExpandCell.m in Sources */,
 				F87641AC20118770001316AF /* MASCompositeConstraint.m in Sources */,
+				F87DE4DA2012EE50005A4E15 /* LBHomeController.m in Sources */,
 				F87641B320118770001316AF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
