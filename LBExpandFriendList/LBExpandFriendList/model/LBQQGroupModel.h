@@ -10,7 +10,7 @@
 
 @interface LBQQGroupModel : NSObject
 @property (nonatomic, assign)BOOL isOpened;
-@property (nonatomic, retain)NSString *groupName;
-@property (nonatomic, assign)NSInteger groupCount;
-@property (nonatomic, retain)NSArray *groupFriends;
+@property (nonatomic, retain)NSString *sectionName;
+@property (nonatomic, assign)NSInteger sectionCount;
+@property (nonatomic, retain)NSArray *rows;
 @end

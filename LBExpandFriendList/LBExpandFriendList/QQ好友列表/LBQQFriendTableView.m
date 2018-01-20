@@ -39,14 +39,14 @@ char* const buttonKey = "buttonKey";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     LBQQGroupModel *groupModel = _dataSourceArray[section];
-    NSInteger count = groupModel.isOpened?groupModel.groupFriends.count:0;
+    NSInteger count = groupModel.isOpened?groupModel.rows.count:0;
     return count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LBQQFriendCell *cell = [LBQQFriendCell cellWithTableView:tableView];
     LBQQGroupModel *groupModel = _dataSourceArray[indexPath.section];
-    NSDictionary *friendInfoDic = groupModel.groupFriends[indexPath.row];
+    NSDictionary *friendInfoDic = groupModel.rows[indexPath.row];
     cell.titleLabel.text = friendInfoDic[@"name"];
 //    cell.shuoshuoLabel.text = friendInfoDic[@"shuoshuo"];
 //    cell.datadic = friendInfoDic;
@@ -58,23 +58,18 @@ char* const buttonKey = "buttonKey";
         cell.onlineLabel.textColor = [UIColor lightGrayColor];
         cell.onlineLabel.text = @"不在线";
     }
-    cell.nikeLabel.text = friendInfoDic[@"shuoshuo"];
+    cell.nikeLabel.text = friendInfoDic[@"nike"];
 //    cell.datadic = friendInfoDic;
     cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     cell.contentView.backgroundColor = [UIColor whiteColor];
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    LBQQGroupModel *groupModel = _dataSourceArray[indexPath.section];
-    NSDictionary *friendInfoDic = groupModel.groupFriends[indexPath.row];
-    NSLog(@"%@ %@",friendInfoDic[@"name"],friendInfoDic[@"shuoshuo"]);
-}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {   /// 组头
     UIView *sectionView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
-    sectionView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.8];
+    sectionView.backgroundColor = [UIColor whiteColor];
     LBQQGroupModel *groupModel = _dataSourceArray[section];
     /// 添加头按钮
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -104,7 +99,7 @@ char* const buttonKey = "buttonKey";
     /// 添加组标题
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.font = [UIFont systemFontOfSize:15];
-    titleLabel.text = groupModel.groupName;
+    titleLabel.text = groupModel.sectionName;
     [button addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@34);
@@ -115,12 +110,12 @@ char* const buttonKey = "buttonKey";
     [numberLabel setBackgroundColor:[UIColor clearColor]];
     [numberLabel setFont:[UIFont systemFontOfSize:14]];
     NSInteger onLineCount = 0;
-    for (NSDictionary *friendInfoDic in groupModel.groupFriends) {
+    for (NSDictionary *friendInfoDic in groupModel.rows) {
         if ([friendInfoDic[@"status"] isEqualToString:@"1"]) {
             onLineCount++;
         }
     }
-    [numberLabel setText:[NSString stringWithFormat:@"%ld/%ld",onLineCount,groupModel.groupCount]];
+    [numberLabel setText:[NSString stringWithFormat:@"%ld/%ld",onLineCount,groupModel.sectionCount]];
     [sectionView addSubview:numberLabel];
     
     return sectionView;

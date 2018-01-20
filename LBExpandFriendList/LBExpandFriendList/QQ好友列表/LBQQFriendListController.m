@@ -36,54 +36,58 @@
 - (void)addData{
     /// 测试实例
     _dataSourceArray = [[NSMutableArray alloc]init];
-    NSDictionary *JSONDic =@{@"group":
+    NSArray *dataArray = @[@{@"sectionName":@"特别关心",@"sectionCount":@"3",@"rows":@[
+                                               @{@"name":@"Python",@"nike":@"人生苦短，我用Python",@"status":@"1"},
+                                               @{@"name":@"Java",@"nike":@"Java大数据时代到来",@"status":@"1"}
+                                               ]},
+                            @{@"sectionName":@"家乡",@"sectionCount":@"5",@"rows":
+                                           @[
+                                               @{@"name":@"Swift",@"nike":@"Swift是苹果开发新型开发语言",@"status":@"1"}
+                                               ]},
+                             @{@"sectionName":@"同学",@"sectionCount":@"3",@"rows":
+                                           @[
+                                               @{@"name":@"PHP",@"nike":@"PHP是世界上最好的语言",@"status":@"1"}
+                                               ]},
+                             @{@"sectionName":@"家人",@"sectionCount":@"4",@"rows":
+                                           @[
+                                               @{@"name":@"GO",@"nike":@"go是Google发行的语言",@"status":@"1"},
+                                               @{@"name":@"JS",@"nike":@"JS是脚本语言",@"status":@"1"}]},
+                              @{@"sectionName":@"老师",@"sectionCount":@"3",@"rows":
+                                           @[
+                                               @{@"name":@"运维",@"nike":@"运维是大型公司不可缺少的一部分",@"status":@"1"}
+                                               ]},
+                              @{@"sectionName":@"朋友",@"sectionCount":@"3",@"rows":
+                                           @[
+                                               @{@"name":@"自动化测试",@"nike":@"自动化测试需求大",@"status":@"1"},
+                                               @{@"name":@"运维",@"nike":@"运维是大型公司不可缺少的一部分",@"status":@"1"}
+                                               ]},
+                           @{@"sectionName":@"小学",@"sectionCount":@"3",@"rows":
+                                 @[@{@"name":@"Python",@"nike":@"人生苦短，我用Python",@"status":@"1"},
+                                     @{@"name":@"自动化测试",@"nike":@"自动化测试需求大",@"status":@"1"}
+                                     ]},
+                           @{@"sectionName":@"初中",@"sectionCount":@"3",@"rows":
                                  @[
-                                     @{@"groupName":@"特别关心",@"groupCount":@"3",@"groupArray":@[
-                                               @{@"name":@"小明",@"avatarURL":@"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=8232468,2916696848&fm=27&gp=0.jpg",@"shuoshuo":@"作业又没写好,唉！",@"status":@"1"},
-                                               @{@"name":@"小红",@"avatarURL":@"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=8232468,2916696848&fm=27&gp=0.jpg",@"shuoshuo":@"考试不要抄我的！",@"status":@"1"},
-                                               @{@"name":@"小王",@"avatarURL":@"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=8232468,2916696848&fm=27&gp=0.jpg",@"shuoshuo":@"马勒戈壁有本事放学别走！",@"status":@"0"}
-                                               ]},
-                                     @{@"groupName":@"家乡",@"groupCount":@"5",@"groupArray":
-                                           @[
-                                               @{@"name":@"王二小",@"avatarURL":@"",@"shuoshuo":@"我家来自农村，不要欺负我",@"status":@"1"},
-                                               @{@"name":@"王麻子",@"avatarURL":@"",@"shuoshuo":@"历史咯老师真漂亮！",@"status":@"1"},
-                                               @{@"name":@"吴道德",@"avatarURL":@"",@"shuoshuo":@"我姓吴，法号道德",@"status":@"1"},
-                                               @{@"name":@"张丝丹",@"avatarURL":@"",@"shuoshuo":@"我小名叫四蛋子，哈哈",@"status":@"0"},
-                                               @{@"name":@"赵铁柱",@"avatarURL":@"",@"shuoshuo":@"我喜欢小花",@"status":@"0"}
-                                               ]},
-                                     @{@"groupName":@"同学",@"groupCount":@"3",@"groupArray":
-                                           @[
-                                               @{@"name":@"刘阿猫",@"avatarURL":@"",@"shuoshuo":@"我操，高考又到了",@"status":@"1"},
-                                               @{@"name":@"静静",@"avatarURL":@"",@"shuoshuo":@"大家好，我是静静。",@"status":@"1"},
-                                               @{@"name":@"隔壁老王",@"avatarURL":@"",@"shuoshuo":@"小样你是新来的吧！",@"status":@"0"}
-                                               ]},
-                                     @{@"groupName":@"家人",@"groupCount":@"4",@"groupArray":
-                                           @[
-                                               @{@"name":@"屌丝男",@"avatarURL":@"",@"shuoshuo":@"泡妞去了，回聊。",@"status":@"1"},
-                                               @{@"name":@"游戏狗",@"avatarURL":@"",@"shuoshuo":@"我擦，双杀！！",@"status":@"1"},
-                                               @{@"name":@"学霸",@"avatarURL":@"",@"shuoshuo":@"期末考试稳拿第一",@"status":@"1"},
-                                               @{@"name":@"书呆子",@"avatarURL":@"",@"shuoshuo":@"蛋白质是怎么炼成的。。。",@"status":@"0"}]},
-                                     @{@"groupName":@"老师",@"groupCount":@"3",@"groupArray":
-                                           @[
-                                               @{@"name":@"JAVA工程师",@"avatarURL":@"",@"shuoshuo":@"JAVA是最好的编程语言",@"status":@"1"},
-                                               @{@"name":@"Android工程师",@"avatarURL":@"",@"shuoshuo":@"Android最好用，便宜耐摔！",@"status":@"1"},
-                                               @{@"name":@"iOS工程师",@"avatarURL":@"",@"shuoshuo":@"iPhone手机牛逼又流畅。",@"status":@"0"}
-                                               ]},
-                                     @{@"groupName":@"朋友",@"groupCount":@"3",@"groupArray":
-                                           @[
-                                               @{@"name":@"妈妈",@"avatarURL":@"",@"shuoshuo":@"今天天气好晴朗☀️，处处好风光",@"status":@"1"},
-                                               @{@"name":@"爸爸",@"avatarURL":@"",@"shuoshuo":@"农家乐！",@"status":@"1"},
-                                               @{@"name":@"姐姐",@"avatarURL":@"",@"shuoshuo":@"唱歌跳舞样样精通。",@"status":@"0"}
-                                               ]}
-                                     ]
-                             };
+                                     @{@"name":@"自动化测试",@"nike":@"自动化测试需求大",@"status":@"1"}
+                                     ]},
+                           @{@"sectionName":@"高中",@"sectionCount":@"3",@"rows":
+                                 @[
+                                     @{@"name":@"自动化测试",@"nike":@"自动化测试需求大",@"status":@"1"},
+                                     @{@"name":@"JS",@"nike":@"JS是脚本语言",@"status":@"1"}
+                                     ]},
+                           @{@"sectionName":@"大学",@"sectionCount":@"3",@"rows":
+                                 @[
+                                     @{@"name":@"自动化测试",@"nike":@"自动化测试需求大",@"status":@"1"},@{@"name":@"GO",@"nike":@"go是Google发行的语言",@"status":@"1"}
+                                     ]}
+                           
+                                     ];
     
-    for (NSDictionary *groupInfoDic in JSONDic[@"group"]) {
+    
+    for (NSDictionary *dic in dataArray) {
         LBQQGroupModel *model = [[LBQQGroupModel alloc]init];
-        model.groupName = groupInfoDic[@"groupName"];
-        model.groupCount = [groupInfoDic[@"groupCount"] integerValue];
+        model.sectionName = dic[@"sectionName"];
+        model.sectionCount = [dic[@"sectionCount"] integerValue];
         model.isOpened = NO;
-        model.groupFriends = groupInfoDic[@"groupArray"];
+        model.rows = dic[@"rows"];
         [_dataSourceArray addObject:model];
     }
 }
