@@ -8,10 +8,8 @@
 
 import UIKit
 import ObjectiveC.runtime
-//import <objc/runtime.h>
 let buttonKey = "buttonKey";
 
-//let DEGREES_TO_RADIANS(x) (M_PI * (x) / 180.0)
 class LBQQFriendTableView: UITableView {
     lazy var modelArray:[LBQQGroupModel] = [LBQQGroupModel]()
 
@@ -143,38 +141,12 @@ extension LBQQFriendTableView{
             animation.duration = 0.0
             animation.repeatCount = MAXFLOAT
             animation.isRemovedOnCompletion = true
-//            imageView.layer.add(animation, forKey: nil)
-//            imageView.layer.removeAllAnimations()
-//            UIView.animate(withDuration: 0.3) {
-//                imageView.transform = imageView.transform.rotated(by: CGFloat(Double.pi))
-//            }
-            
-//            UIView.animate(withDuration: 0.3, delay: 0.0, options: .allowUserInteraction, animations: {
-//
-////                CGAffineTransform(); currentTransform = imageView.transform;
-//
-//
-////                CGAffineTransform() newTransform = CGAffineTransformRotate(imageView.t, -M_PI/2);
-////                // 在现在的基础上旋转指定角度
-////                imageView.transform = newTransform;
-//            }, completion: nil)
         }else{
             let animation = CABasicAnimation(keyPath: "transform.rotation")
             animation.toValue = 1 * Double.pi
             animation.duration = 0.0
             animation.repeatCount = MAXFLOAT
             animation.isRemovedOnCompletion = true
-//            imageView.layer.add(animation, forKey: nil)
-//            imageView.layer.removeAllAnimations()
-//            UIView.animate(withDuration: 0.3) {
-//                imageView.transform = imageView.transform.rotated(by: CGFloat(Double.pi / 2))
-//            }
-//            UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction,.curveLinear], animations: {
-////                CGAffineTransform currentTransform = imageView.transform;
-////                CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform, M_PI/2);
-////                // 在现在的基础上旋转指定角度
-////                imageView.transform = newTransform;
-//            }, completion: nil)
         }
         
         groupModel.isOpened = !groupModel.isOpened!;
