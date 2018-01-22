@@ -121,7 +121,7 @@ char* const buttonKey = "buttonKey";
     return sectionView;
 }
 
-- (void)sectionButtonClick:(UIButton *)button//headButton点击
+- (void)sectionButtonClick:(UIButton *)button
 {
     LBQQGroupModel *groupModel = _dataSourceArray[button.tag - 1];
     UIImageView *imageView =  objc_getAssociatedObject(button,buttonKey);

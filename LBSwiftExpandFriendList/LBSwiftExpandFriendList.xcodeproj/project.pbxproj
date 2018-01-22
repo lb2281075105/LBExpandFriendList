@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F44279A5FE6D681321436603 /* Pods_LBSwiftExpandFriendList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057B628049370DE87E0CE1E8 /* Pods_LBSwiftExpandFriendList.framework */; };
+		F85A0FC020156AAC00D1BC4B /* LBQQFriendTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A0FBF20156AAC00D1BC4B /* LBQQFriendTableView.swift */; };
+		F85A0FC220156ABD00D1BC4B /* LBQQFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A0FC120156ABD00D1BC4B /* LBQQFriendCell.swift */; };
+		F85A0FC52015778100D1BC4B /* LBQQGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A0FC42015778100D1BC4B /* LBQQGroupModel.swift */; };
 		F87641E72011C58F001316AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87641E62011C58F001316AF /* AppDelegate.swift */; };
 		F87641EE2011C58F001316AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87641ED2011C58F001316AF /* Assets.xcassets */; };
 		F87641F12011C58F001316AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87641EF2011C58F001316AF /* LaunchScreen.storyboard */; };
@@ -21,6 +24,11 @@
 		F87DE4CF2012DE9D005A4E15 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4C92012DE9D005A4E15 /* line.png */; };
 		F87DE4D02012DE9D005A4E15 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4CA2012DE9D005A4E15 /* rightArrow.png */; };
 		F87DE4D12012DE9D005A4E15 /* topArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F87DE4CB2012DE9D005A4E15 /* topArrow.png */; };
+		F87DE52620132AA4005A4E15 /* LBHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DE52520132AA4005A4E15 /* LBHomeController.swift */; };
+		F87DE52820132B06005A4E15 /* LBHomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DE52720132B06005A4E15 /* LBHomeTableView.swift */; };
+		F87DE52A20132C3F005A4E15 /* LBHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DE52920132C3F005A4E15 /* LBHomeCell.swift */; };
+		F87DE53220133722005A4E15 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87DE53120133721005A4E15 /* UIView+ViewController.m */; };
+		F87DE53420133CC5005A4E15 /* LBQQFriendListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DE53320133CC5005A4E15 /* LBQQFriendListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +51,9 @@
 /* Begin PBXFileReference section */
 		057B628049370DE87E0CE1E8 /* Pods_LBSwiftExpandFriendList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBSwiftExpandFriendList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFB518F168258FE52856A17 /* Pods-LBSwiftExpandFriendList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBSwiftExpandFriendList.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList.release.xcconfig"; sourceTree = "<group>"; };
+		F85A0FBF20156AAC00D1BC4B /* LBQQFriendTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBQQFriendTableView.swift; sourceTree = "<group>"; };
+		F85A0FC120156ABD00D1BC4B /* LBQQFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBQQFriendCell.swift; sourceTree = "<group>"; };
+		F85A0FC42015778100D1BC4B /* LBQQGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBQQGroupModel.swift; sourceTree = "<group>"; };
 		F87641E32011C58F001316AF /* LBSwiftExpandFriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBSwiftExpandFriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87641E62011C58F001316AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87641ED2011C58F001316AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +73,13 @@
 		F87DE4C92012DE9D005A4E15 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		F87DE4CA2012DE9D005A4E15 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		F87DE4CB2012DE9D005A4E15 /* topArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topArrow.png; sourceTree = "<group>"; };
+		F87DE52520132AA4005A4E15 /* LBHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBHomeController.swift; sourceTree = "<group>"; };
+		F87DE52720132B06005A4E15 /* LBHomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBHomeTableView.swift; sourceTree = "<group>"; };
+		F87DE52920132C3F005A4E15 /* LBHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBHomeCell.swift; sourceTree = "<group>"; };
+		F87DE52D20133691005A4E15 /* LBHeader-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LBHeader-Bridge.h"; sourceTree = "<group>"; };
+		F87DE53020133721005A4E15 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
+		F87DE53120133721005A4E15 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		F87DE53320133CC5005A4E15 /* LBQQFriendListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBQQFriendListController.swift; sourceTree = "<group>"; };
 		FC046A6B904F925EAC2D404C /* Pods-LBSwiftExpandFriendList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBSwiftExpandFriendList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBSwiftExpandFriendList/Pods-LBSwiftExpandFriendList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +126,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F85A0FC32015777500D1BC4B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F85A0FC42015778100D1BC4B /* LBQQGroupModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		F87641DA2011C58F001316AF = {
 			isa = PBXGroup;
 			children = (
@@ -134,11 +160,15 @@
 			isa = PBXGroup;
 			children = (
 				F87641E62011C58F001316AF /* AppDelegate.swift */,
-				F87DE4C62012DE9D005A4E15 /* image */,
+				F87DE52420132A83005A4E15 /* home */,
+				F87DE52320132A6C005A4E15 /* QQ好友列表 */,
+				F87DE52E20133721005A4E15 /* common */,
 				F87642142011C5F5001316AF /* 可折叠的表示图 */,
 				F87641ED2011C58F001316AF /* Assets.xcassets */,
 				F87641EF2011C58F001316AF /* LaunchScreen.storyboard */,
+				F87DE4C62012DE9D005A4E15 /* image */,
 				F87641F22011C58F001316AF /* Info.plist */,
+				F87DE52D20133691005A4E15 /* LBHeader-Bridge.h */,
 			);
 			path = LBSwiftExpandFriendList;
 			sourceTree = "<group>";
@@ -181,6 +211,44 @@
 				F87DE4CB2012DE9D005A4E15 /* topArrow.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		F87DE52320132A6C005A4E15 /* QQ好友列表 */ = {
+			isa = PBXGroup;
+			children = (
+				F85A0FC32015777500D1BC4B /* model */,
+				F87DE53320133CC5005A4E15 /* LBQQFriendListController.swift */,
+				F85A0FBF20156AAC00D1BC4B /* LBQQFriendTableView.swift */,
+				F85A0FC120156ABD00D1BC4B /* LBQQFriendCell.swift */,
+			);
+			path = "QQ好友列表";
+			sourceTree = "<group>";
+		};
+		F87DE52420132A83005A4E15 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				F87DE52520132AA4005A4E15 /* LBHomeController.swift */,
+				F87DE52720132B06005A4E15 /* LBHomeTableView.swift */,
+				F87DE52920132C3F005A4E15 /* LBHomeCell.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		F87DE52E20133721005A4E15 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F87DE52F20133721005A4E15 /* UIView+ViewController */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		F87DE52F20133721005A4E15 /* UIView+ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F87DE53020133721005A4E15 /* UIView+ViewController.h */,
+				F87DE53120133721005A4E15 /* UIView+ViewController.m */,
+			);
+			path = "UIView+ViewController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,9 +446,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85A0FC220156ABD00D1BC4B /* LBQQFriendCell.swift in Sources */,
+				F87DE52820132B06005A4E15 /* LBHomeTableView.swift in Sources */,
 				F87641E72011C58F001316AF /* AppDelegate.swift in Sources */,
+				F87DE53420133CC5005A4E15 /* LBQQFriendListController.swift in Sources */,
 				F87642182011CAD8001316AF /* LBExpandTableView.swift in Sources */,
+				F85A0FC52015778100D1BC4B /* LBQQGroupModel.swift in Sources */,
 				F87642162011C613001316AF /* LBExpandController.swift in Sources */,
+				F85A0FC020156AAC00D1BC4B /* LBQQFriendTableView.swift in Sources */,
+				F87DE52A20132C3F005A4E15 /* LBHomeCell.swift in Sources */,
+				F87DE53220133722005A4E15 /* UIView+ViewController.m in Sources */,
+				F87DE52620132AA4005A4E15 /* LBHomeController.swift in Sources */,
 				F876421A2011CE7C001316AF /* LBExpandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +623,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LBSwiftExpandFriendList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LBSwiftExpandFriendList/LBHeader-Bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -564,6 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LBSwiftExpandFriendList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LBSwiftExpandFriendList/LBHeader-Bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
