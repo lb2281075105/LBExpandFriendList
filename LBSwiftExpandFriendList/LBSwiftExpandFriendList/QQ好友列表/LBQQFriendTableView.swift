@@ -29,12 +29,39 @@ class LBQQFriendTableView: UITableView {
 }
 extension LBQQFriendTableView:UITableViewDelegate,UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return modelArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let groupModel = modelArray[section];
+        guard let isOpen = groupModel.isOpened else{
+            return 0
+        }
+        guard let rowCount = groupModel.rows?.count else {
+            return 0
+        }
+        return isOpen ? rowCount:0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LBQQFriendCell") as! LBQQFriendCell
-        cell.textLabel?.text = modelArray[indexPath.row].sectionName
+        let groupModel =  modelArray[indexPath.section]
+        let friendInfoDic = groupModel.rows![indexPath.row]
+        cell.titleLabel.text = friendInfoDic["name"] as? String
+
+        if ((friendInfoDic["status"]as! String) == "1") {
+            cell.onlineLabel.textColor = UIColor.green
+            cell.onlineLabel.text = "在线";
+        }else{
+            cell.onlineLabel.textColor = UIColor.lightGray
+            cell.onlineLabel.text = "不在线";
+        }
+        cell.nikeLabel.text = friendInfoDic["nike"] as? String;
+        cell.backgroundColor = UIColor.white;
+        cell.selectionStyle = .default;
+        cell.contentView.backgroundColor = UIColor.white;
+        
+        
         return cell;
     }
     
@@ -59,19 +86,15 @@ extension LBQQFriendTableView:UITableViewDelegate,UITableViewDataSource{
         sectionView.addSubview(line)
         let imgView = UIImageView(frame: CGRect(x: 10, y: (44-16)/2, width: 14, height: 16))
         sectionView.addSubview(imgView)
-        
-//        if (groupModel.isOpened) {
-//
-//            imgView.image = UIImage(named: "rightArrow")
-//            CGAffineTransform currentTransform = imgView.transform;
-//            CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform, M_PI/2); // 在现在的基础上旋转指定角度
-//            imgView.transform = newTransform;
-//            objc_setAssociatedObject(button, buttonKey, imgView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//
-//        }else{
-//            [imgView setImage:[UIImage imageNamed:@"rightArrow"]];
-//            objc_setAssociatedObject(button, buttonKey, imgView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//        }
+        imgView.image = UIImage(named: "rightArrow")
+        if groupModel.isOpened!{
+            imgView.transform = imgView.transform.rotated(by: CGFloat(Double.pi / 2))
+            objc_setAssociatedObject(button, buttonKey, imgView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+        }else{
+            imgView.image = UIImage(named: "rightArrow")
+            objc_setAssociatedObject(button, buttonKey, imgView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
         /// 添加组标题
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 15)
@@ -99,8 +122,6 @@ extension LBQQFriendTableView:UITableViewDelegate,UITableViewDataSource{
         return sectionView;
     }
     
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 66
     }
@@ -115,26 +136,48 @@ extension LBQQFriendTableView{
         
         let imageView =  objc_getAssociatedObject(button,buttonKey);
         
-        if (groupModel.isOpened) {
-            UIView.animate(withDuration: 0.3, delay: 0.0, options: .allowUserInteraction, animations: {
+        if (groupModel.isOpened)! {
             
-//                CGAffineTransform(); currentTransform = imageView.transform;
-                
-                
-//                CGAffineTransform() newTransform = CGAffineTransformRotate(imageView.t, -M_PI/2);
-//                // 在现在的基础上旋转指定角度
-//                imageView.transform = newTransform;
-            }, completion: nil)
+            let animation = CABasicAnimation(keyPath: "transform.rotation")
+            animation.toValue = 1 * Double.pi
+            animation.duration = 0.0
+            animation.repeatCount = MAXFLOAT
+            animation.isRemovedOnCompletion = true
+//            imageView.layer.add(animation, forKey: nil)
+//            imageView.layer.removeAllAnimations()
+//            UIView.animate(withDuration: 0.3) {
+//                imageView.transform = imageView.transform.rotated(by: CGFloat(Double.pi))
+//            }
+            
+//            UIView.animate(withDuration: 0.3, delay: 0.0, options: .allowUserInteraction, animations: {
+//
+////                CGAffineTransform(); currentTransform = imageView.transform;
+//
+//
+////                CGAffineTransform() newTransform = CGAffineTransformRotate(imageView.t, -M_PI/2);
+////                // 在现在的基础上旋转指定角度
+////                imageView.transform = newTransform;
+//            }, completion: nil)
         }else{
-            UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction,.curveLinear], animations: {
-//                CGAffineTransform currentTransform = imageView.transform;
-//                CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform, M_PI/2);
-//                // 在现在的基础上旋转指定角度
-//                imageView.transform = newTransform;
-            }, completion: nil)
+            let animation = CABasicAnimation(keyPath: "transform.rotation")
+            animation.toValue = 1 * Double.pi
+            animation.duration = 0.0
+            animation.repeatCount = MAXFLOAT
+            animation.isRemovedOnCompletion = true
+//            imageView.layer.add(animation, forKey: nil)
+//            imageView.layer.removeAllAnimations()
+//            UIView.animate(withDuration: 0.3) {
+//                imageView.transform = imageView.transform.rotated(by: CGFloat(Double.pi / 2))
+//            }
+//            UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction,.curveLinear], animations: {
+////                CGAffineTransform currentTransform = imageView.transform;
+////                CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform, M_PI/2);
+////                // 在现在的基础上旋转指定角度
+////                imageView.transform = newTransform;
+//            }, completion: nil)
         }
         
-        groupModel.isOpened = !groupModel.isOpened;
+        groupModel.isOpened = !groupModel.isOpened!;
         /// 刷新组
         let indexSet = NSIndexSet.init(index: button.tag - 1) as IndexSet
         reloadSections(indexSet, with: .automatic)

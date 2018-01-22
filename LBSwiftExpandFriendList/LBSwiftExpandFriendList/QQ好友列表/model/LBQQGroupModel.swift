@@ -9,7 +9,7 @@
 import UIKit
 
 class LBQQGroupModel: NSObject {
-    var isOpened:Bool = false
+    var isOpened:Bool?
     var sectionName:String = ""
     var sectionCount:String = "0"
     var rows:[[String:Any]]?

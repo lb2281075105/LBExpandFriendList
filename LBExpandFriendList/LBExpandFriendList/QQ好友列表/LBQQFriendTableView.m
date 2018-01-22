@@ -48,9 +48,7 @@ char* const buttonKey = "buttonKey";
     LBQQGroupModel *groupModel = _dataSourceArray[indexPath.section];
     NSDictionary *friendInfoDic = groupModel.rows[indexPath.row];
     cell.titleLabel.text = friendInfoDic[@"name"];
-//    cell.shuoshuoLabel.text = friendInfoDic[@"shuoshuo"];
-//    cell.datadic = friendInfoDic;
-    
+ 
     if ([friendInfoDic[@"status"] isEqualToString:@"1"]) {
         cell.onlineLabel.textColor = [UIColor greenColor];
         cell.onlineLabel.text = @"在线";
@@ -59,7 +57,6 @@ char* const buttonKey = "buttonKey";
         cell.onlineLabel.text = @"不在线";
     }
     cell.nikeLabel.text = friendInfoDic[@"nike"];
-//    cell.datadic = friendInfoDic;
     cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     cell.contentView.backgroundColor = [UIColor whiteColor];

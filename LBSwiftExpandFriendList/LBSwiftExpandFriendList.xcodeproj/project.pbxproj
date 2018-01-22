@@ -11,6 +11,7 @@
 		F85A0FC020156AAC00D1BC4B /* LBQQFriendTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A0FBF20156AAC00D1BC4B /* LBQQFriendTableView.swift */; };
 		F85A0FC220156ABD00D1BC4B /* LBQQFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A0FC120156ABD00D1BC4B /* LBQQFriendCell.swift */; };
 		F85A0FC52015778100D1BC4B /* LBQQGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A0FC42015778100D1BC4B /* LBQQGroupModel.swift */; };
+		F85A0FC72015AADC00D1BC4B /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F85A0FC62015AADC00D1BC4B /* icon.jpg */; };
 		F87641E72011C58F001316AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87641E62011C58F001316AF /* AppDelegate.swift */; };
 		F87641EE2011C58F001316AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87641ED2011C58F001316AF /* Assets.xcassets */; };
 		F87641F12011C58F001316AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87641EF2011C58F001316AF /* LaunchScreen.storyboard */; };
@@ -54,6 +55,7 @@
 		F85A0FBF20156AAC00D1BC4B /* LBQQFriendTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBQQFriendTableView.swift; sourceTree = "<group>"; };
 		F85A0FC120156ABD00D1BC4B /* LBQQFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBQQFriendCell.swift; sourceTree = "<group>"; };
 		F85A0FC42015778100D1BC4B /* LBQQGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBQQGroupModel.swift; sourceTree = "<group>"; };
+		F85A0FC62015AADC00D1BC4B /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		F87641E32011C58F001316AF /* LBSwiftExpandFriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBSwiftExpandFriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87641E62011C58F001316AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87641ED2011C58F001316AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		F87DE4C62012DE9D005A4E15 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				F85A0FC62015AADC00D1BC4B /* icon.jpg */,
 				F87DE4C72012DE9D005A4E15 /* bottomArrow.png */,
 				F87DE4C82012DE9D005A4E15 /* circle.png */,
 				F87DE4C92012DE9D005A4E15 /* line.png */,
@@ -361,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85A0FC72015AADC00D1BC4B /* icon.jpg in Resources */,
 				F87641F12011C58F001316AF /* LaunchScreen.storyboard in Resources */,
 				F87DE4D12012DE9D005A4E15 /* topArrow.png in Resources */,
 				F87DE4CF2012DE9D005A4E15 /* line.png in Resources */,
